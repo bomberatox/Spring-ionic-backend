@@ -72,6 +72,7 @@ public class DBService {
 		Produto p9 = new Produto(null, "Cabo fonte", 20.00);
 		Produto p10 = new Produto(null, "Cabo HDMI", 40.00);
 		Produto p11 = new Produto(null, "Mesa digitalizadora", 500.00);
+		Produto p12 = new Produto(null, "Mouse Gamer RGB", 120.00);
 		
 		Estado est1 = new Estado(null, "Minas Gerais");
 		Estado est2 = new Estado(null, "São Paulo");
@@ -114,7 +115,7 @@ public class DBService {
 		cat3.getProdutos().addAll(Arrays.asList(p7));
 		cat4.getProdutos().addAll(Arrays.asList(p3));
 		cat5.getProdutos().addAll(Arrays.asList(p5));
-		cat6.getProdutos().addAll(Arrays.asList(p7));
+		cat6.getProdutos().addAll(Arrays.asList(p7,p12));
 		cat7.getProdutos().addAll(Arrays.asList(p11,p10,p9));
 		
 		p1.getCategorias().addAll(Arrays.asList(cat1));
@@ -128,6 +129,7 @@ public class DBService {
 		p9.getCategorias().addAll(Arrays.asList(cat7));
 		p10.getCategorias().addAll(Arrays.asList(cat7));
 		p11.getCategorias().addAll(Arrays.asList(cat7));
+		p12.getCategorias().addAll(Arrays.asList(cat6));
 		
 		est1.getCidades().addAll(Arrays.asList(c1));
 		est1.getCidades().addAll(Arrays.asList(c2,c3));
@@ -135,7 +137,7 @@ public class DBService {
 		cli1.getPedidos().addAll(Arrays.asList(ped1,ped2));
 		
 		categoriaRepository.saveAll(Arrays.asList(cat1, cat2, cat3, cat4, cat5, cat6, cat7));
-		produtoRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11));
+		produtoRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12));
 		estadoRepository.saveAll(Arrays.asList(est1,est2));
 		cidadeRepository.saveAll(Arrays.asList(c1,c2,c3));
 		clienteRepository.saveAll(Arrays.asList(cli1));
